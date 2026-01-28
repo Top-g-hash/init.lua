@@ -160,31 +160,12 @@ return {
                 ["<C-y>"] = cmp.mapping.confirm({ select = true }),
                 ["<C-Space>"] = cmp.mapping.complete(),
             }),
-<<<<<<< HEAD
-            sources = cmp.config.sources({
-                { name = "copilot", group_index = 2 },
-                { name = 'nvim_lsp' },
-                { name = 'luasnip' }, -- For luasnip users.
-            }, {
-                { name = 'buffer' },
-            })
-        })
 
-        vim.diagnostic.config({
-            -- update_in_insert = true,
-            float = {
-                focusable = false,
-                style = "minimal",
-                border = "rounded",
-                source = "always",
-                header = "",
-                prefix = "",
-=======
             sources = {
                 { name = "nvim_lsp" },
                 { name = "luasnip" },
                 { name = "buffer" },
->>>>>>> b2dd1bc (LSP vue_ls & prettier conform)
+
             },
         })
 

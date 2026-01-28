@@ -131,7 +131,20 @@ return {
         vim.lsp.config("vue_ls", {
             capabilities = capabilities,
         })
-
+        -- Tailwind CSS
+        vim.lsp.config("tailwindcss", {
+            capabilities = capabilities,
+            filetypes = {
+                "html",
+                "css",
+                "scss",
+                "javascript",
+                "typescript",
+                "javascriptreact",
+                "typescriptreact",
+                "vue",
+            },
+        })
         -- -------------------
         -- Enable servers
         -- -------------------
@@ -141,6 +154,7 @@ return {
             "gopls",
             "vtsls",
             "vue_ls",
+            "tailwindcss",
         })
 
         -- -------------------
@@ -149,6 +163,9 @@ return {
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
         cmp.setup({
+            completion = {
+                autocomplete = { cmp.TriggerEvent.TextChanged },
+            },
             snippet = {
                 expand = function(args)
                     require("luasnip").lsp_expand(args.body)
